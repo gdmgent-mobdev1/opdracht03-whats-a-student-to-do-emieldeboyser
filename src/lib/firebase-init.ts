@@ -25,7 +25,6 @@ import {
 } from "firebase/auth";
 import { Card } from "../Components";
 import ProjectCard from "../Components/ProjectKard";
-import DetailedTodo from "../Components/TodoList";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -51,6 +50,7 @@ export const database = getFirestore(app);
 function makeUsername() {
   const userEmail = localStorage.getItem("emailUser");
   const usernameMsg = userEmail?.replace(/@.*$/, "");
+  // @ts-ignore
   localStorage.setItem("username", usernameMsg);
   return usernameMsg;
 }
@@ -116,6 +116,7 @@ function signInWithGoogle(e: any) {
 
       // check if user is in database already
 
+      // @ts-ignore
       const { isNewUser } = getAdditionalUserInfo(result);
       console.log(isNewUser);
 
@@ -308,8 +309,6 @@ async function addUserToProject(id: any) {
 }
 
 async function viewProjectDetailed(id: any) {
-  console.log(id);
-
   // hide all projects
   const getAllProjects = document.querySelector("main");
   const app = document.querySelector("#app");
@@ -317,11 +316,7 @@ async function viewProjectDetailed(id: any) {
   // get all data from database with id of project
   const docRef = doc(db, "projecten", id);
   const docSnap = await getDoc(docRef);
-  console.log(docSnap.data());
   const projectName = docSnap.data()?.name;
-  const deadline = docSnap.data()?.deadline;
-  const description = docSnap.data()?.description;
-  console.log(projectName, deadline, description);
 
   // make detailed page
   const detailedPage = new ProjectCard(projectName, id);
@@ -337,7 +332,6 @@ async function AfterLoadedCards() {
   const buttonPressed = (e: any) => {
     e.preventDefault();
     const id = e.target.id;
-    console.log(id);
     viewProjectDetailed(id);
     localStorage.setItem("idCurrentPressedDoc", id);
   };
@@ -347,34 +341,31 @@ async function AfterLoadedCards() {
   }
 }
 
-function getInputValue(e: any) {
-  e.preventDefault();
-  console.log("add subtask");
-  const id = localStorage.getItem("idCurrentPressedDoc");
-  console.log("this is the", id);
-  addSubtask(id);
-}
-
 function addSubtaskPtn() {
   const getAllSubtaskBtns = document.querySelector(".addSubtask");
-  console.log(getAllSubtaskBtns);
   getAllSubtaskBtns?.addEventListener("click", getInputValue);
 }
 
+function getInputValue(e: any) {
+  e.preventDefault();
+  const id = localStorage.getItem("idCurrentPressedDoc");
+  addSubtask(id);
+}
+
 async function addSubtask(id: any) {
-  id = localStorage.getItem("idCurrentPressedDoc");
+  // id = localStorage.getItem("idCurrentPressedDoc");
 
   const getSubtaskName = document.querySelector(".cardInput");
-  const title = getSubtaskName?.value;
-  console.log(title);
-  const randomId = `_${uuidv4()}`;
-  const docRef = doc(db, "projecten", id);
-  console.log(docRef);
 
-  console.log("geraak ik here?.");
+  // @ts-ignore
+  const title = getSubtaskName?.value;
+  const randomId = `_${uuidv4()}`;
+  console.log(randomId);
+
+  const docRef = doc(db, "projecten", id);
   updateDoc(docRef, {
     subtasks: {
-      id: randomId,
+      // id: randomId,
       name: title,
       done: false,
       description: "",
@@ -387,22 +378,17 @@ async function addSubtask(id: any) {
   window.location.reload();
 }
 
-async function detailedTodo(id: any) {}
-
 async function showSubtasks(id: any) {
   // get all data from database with id of project
   const docRef = doc(db, "projecten", id);
   const docSnap = await getDoc(docRef);
   // show data in console
-  console.log(docSnap.data());
   // get subtasks
-  console.log(docSnap.data()?.subtasks);
 
   if (docSnap.data()?.subtasks !== undefined) {
     const subtasks = docSnap.data()?.subtasks;
     const id = docSnap.data()?.id;
     // show subtasks in console
-    console.log(subtasks?.name);
 
     const subtaskContainer = document.createElement("div");
     subtaskContainer.classList.add("subtaskContainer");
@@ -430,7 +416,7 @@ async function showSubtasks(id: any) {
     subtaskDiv?.appendChild(subtaskProgress);
   } else console.log("no subtasks");
 
-  await detailedTodo(id);
+  await detailedTodo();
 }
 
 export {
@@ -447,3 +433,6 @@ export {
   AfterLoadedCards,
   addSubtask,
 };
+function detailedTodo() {
+  throw new Error("Function not implemented.");
+}

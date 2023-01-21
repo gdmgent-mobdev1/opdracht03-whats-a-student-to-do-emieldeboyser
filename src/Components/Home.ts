@@ -35,7 +35,7 @@ class HomeComponent extends Component {
       <h1>Nieuw project</h1>
         <div class="addProjectForm">
           <input type="text" class="form-input" name="projectName" id="newProjectName" placeholder="Projectnaam"></input>
-          <input type="text" class="form-input" name="projectDescription" id="newProjectDescription" placeholder="Beschrijving"></input>
+          <textarea type="text" class="form-input" name="projectDescription" id="newProjectDescription" placeholder="Beschrijving"></textarea>
           <input type="date" class="form-date" name="projectDate" id="newProjectDate" placeholder="Deadline datum"></input>
           <button type="submit" id="addProjectButton" class="primary-button makeNewProject">Voeg toe</button>
         </div>  

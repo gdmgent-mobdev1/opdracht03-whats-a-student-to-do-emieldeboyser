@@ -9,7 +9,6 @@ import {
   getProjects,
   viewUserMadeProject,
   AfterLoadedCards,
-  addSubtask,
 } from "./lib/firebase-init";
 // import fitrebase functions
 import {

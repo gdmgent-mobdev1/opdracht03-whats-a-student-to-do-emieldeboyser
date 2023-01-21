@@ -5,13 +5,15 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.logincontainer {
+.logincontainer,
+.registercontainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.login-form {
+.login-form,
+.register-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,11 +23,42 @@
   border-radius: 5px;
 }
 
-.login-form label {
+.login-form label,
+.register-form label {
   margin-bottom: 5%;
 }
 
-.login-form input {
+.authContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#login-button,
+#register-button {
+  background-color: rgb(240, 213, 213);
+  padding: 15px;
+  width: 40vw;
+  border: 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+#login-button:hover {
+  background-color: rgb(240, 224, 224);
+  padding: 15px;
+  width: 40vw;
+  border: 0;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: grey;
+}
+
+.login-form input,
+.register-form input {
   margin-bottom: 5%;
   border: 0;
   border-radius: 10px;
@@ -93,12 +126,25 @@ header ul li a {
 
 .addProjectForm input {
   background-color: #eee;
-  color: white;
+  color: rgba(0, 0, 0, 0.405);
   height: 5vh;
   border: none;
   border-radius: 10px;
   width: 60vw;
-  text-align: center;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.form-date::placeholder {
+  color: rgba(0, 0, 0, 0.405);
+}
+
+.addProjectForm input::placeholder {
+  color: rgba(0, 0, 0, 0.405);
+}
+
+.addProjectForm input:focus {
+  outline: none;
 }
 
 .addProjectForm button {
@@ -113,6 +159,20 @@ header ul li a {
 
 #newProjectDescription {
   height: 20vh;
+  width: 60vw;
+  background-color: #eee;
+  color: rgba(0, 0, 0, 0.405);
+  height: 25vh;
+  border: none;
+  border-radius: 10px;
+  width: 60vw;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+#newProjectDescription:focus {
+  outline: none;
 }
 
 .allProjectss {
@@ -131,8 +191,10 @@ header ul li a {
   align-items: center;
   margin: 0 auto;
   border-radius: 20px;
-  height: 20vh;
+  height: auto;
   justify-content: space-evenly;
+  padding: 15px;
+  gap: 50px;
 }
 
 .welcomeMsg {
@@ -185,10 +247,11 @@ header ul li a {
 }
 
 .cardTitle {
-  margin-top: 25px !important;
+  margin-top: 15px !important;
   font-weight: 900;
   font-size: 25pt;
   width: 80vw;
+  max-width: 70vw;
   margin: 0 auto;
   text-align: center;
 }
@@ -228,4 +291,42 @@ header ul li a {
   gap: 10px;
   justify-content: center;
   margin: 0 auto;
+}
+
+.line {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#login-google {
+  background-color: transparent;
+  border: 0;
+  margin-bottom: 25px;
+}
+
+.otherLinkToOtherPage {
+  text-decoration: underline;
+  color: black;
+  font-weight: 700;
+  font-size: 15pt;
+}
+
+.registercontainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#register-button {
+  margin-bottom: 25px;
+}
+
+#newProjectName:focus {
+  outline: none;
+}
+
+textarea .form-input {
+  height: 20vh;
+  width: 60vw;
 }

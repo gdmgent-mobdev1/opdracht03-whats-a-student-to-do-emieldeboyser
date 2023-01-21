@@ -22,9 +22,9 @@ class LoginComponent extends Component {
       <input type="email" class="form-input" name="email" id="logIn_Email" placeholder="E-mail">
       <input type="password" class="form-input" name="password" id="logIn_Password" placeholder="Password">
       <button type="submit" id="login-button" class="primary-button">Login</button>
-      <p>_________________</p>
+      <p class="line">_________________</p>
       <button id="login-google" class="secondary-button"><i class="fa-brands fa-google"></i></button>
-      <a href="/register"><p>Not registered yet? Click here to register</p></a>
+      <a href="/register" class="otherLinkToOtherPage"><p>Not registered yet? Click here to register</p></a>
     </form>
     `;
 
