@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.logincontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.login-form label {
+  margin-bottom: 5%;
+}
+
+.login-form input {
+  margin-bottom: 5%;
+  border: 0;
+  border-radius: 10px;
+  width: 60vw;
+  height: 5vh;
+  background-color: #eee;
+  padding: 15px;
+}
+
+header {
+  height: 10vh;
+  background-color: #eee;
+  width: 100vw;
+}
+
+header ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  list-style-type: none;
+  background-color: transparent;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+header ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.newProject {
+  position: absolute;
+  background-color: beige;
+  height: auto;
+  top: 15vh;
+  width: 80vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  left: 10vw;
+  border-radius: 20px;
+}
+
+.closeNewProject {
+  margin-top: 5px;
+}
+
+.addProjectForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 15px;
+
+  gap: 40px;
+}
+
+.addProjectForm input {
+  background-color: #eee;
+  color: white;
+  height: 5vh;
+  border: none;
+  border-radius: 10px;
+  width: 60vw;
+  text-align: center;
+}
+
+.addProjectForm button {
+  background-color: white;
+  color: black;
+  height: 5vh;
+  border: none;
+  border-radius: 10px;
+  width: 60vw;
+  text-align: center;
+}
+
+#newProjectDescription {
+  height: 20vh;
+}
+
+.allProjectss {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5vh;
+}
+
+.card {
+  background-color: bisque;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  height: 20vh;
+  justify-content: space-evenly;
+}
+
+.welcomeMsg {
+  margin-top: 10px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.ProjectsSummary {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.otherProjects {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.invited {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.subtaskDiv {
+  background-color: beige;
+  width: 75vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: auto;
+  gap: 150px;
+  border-radius: 20px;
+  padding: 15px;
+}
+
+.subtaskDiv h2 {
+  font-weight: 300;
+  font-size: 15pt;
+}
+
+.subTaskInfo {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.cardTitle {
+  margin-top: 25px !important;
+  font-weight: 900;
+  font-size: 25pt;
+  width: 80vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cardInput {
+  background-color: #eee;
+  color: black;
+  height: 7vh;
+  border: none;
+  border-radius: 5px;
+  width: 70vw;
+  text-align: left;
+  padding-left: 25px;
+}
+
+.cardInput::placeholder {
+  color: rgba(0, 0, 0, 0.405);
+}
+
+.cardInput:focus {
+  outline: none;
+}
+
+.addSubtask {
+  background-color: white;
+  color: black;
+
+  width: 10vw;
+  border: 0;
+}
+
+.inputDivje {
+  margin-top: 25px !important;
+  display: flex;
+  width: 80vw;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 auto;
+}
